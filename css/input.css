@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* パーセンテージボタンのスタイル */
+  .percentageButton {
+    @apply w-20 text-xl font-semibold py-2 px-3 mr-3 tracking-wider border-none rounded-xl bg-gray-100;
+  }
+  
+  /* 選択されているパーセンテージボタンのスタイル */
+  .select {
+    @apply bg-indigo-700 text-white border-2 border-black;
+  }
+
+  /* inputタグのスタイル */
+  .input-space {
+    @apply p-2 text-xl text-right border-2 rounded-xl;
+  }
+
+  /* リセットボタンと計算ボタンの共通スタイル */
+  .custom-button {
+    @apply text-xl w-32 font-semibold tracking-wider p-2 border-none rounded-xl shadow-md shadow-gray-400;
+  }
+
+  /* 切り替え用のタグのスタイル */
+  .tab {
+    @apply p-2 rounded-t-xl border-2 border-none;
+  }
+
+  /* コメント用Pタグのスタイル */
+  .comment {
+    @apply text-sm text-gray-700 text-center tracking-wider pt-3 pb-1;
+  }
+
+  /* ボーダーのスタイル */
+  .custom-border {
+    @apply border-b-2 border-gray-300;
+  }
+
+  /* 結果表示欄の共通スタイル */
+  .common-1 {
+    @apply pb-7 border-none rounded-b-xl rounded-tr-xl;
+  }
+
+  .common-2 {
+    @apply text-xl tracking-wider p-2;
+  }
+
+  .common-3 {
+    @apply w-3/5 text-xl tracking-wide py-2 pr-4 text-right;
+  }
+  
+
+}
