@@ -701,6 +701,10 @@ video {
   top: 0px;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -721,6 +725,14 @@ video {
 
 .mr-8{
   margin-right: 2rem;
+}
+
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .flex{
