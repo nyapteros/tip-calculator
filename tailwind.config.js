@@ -18,7 +18,7 @@ module.exports = {
     },
     // 新規ブレークポイント、デフォルトは効かなくなる
     screens: {
-      sp: "400px",
+      sp: "350px",
       tb: "768px",
       pc: "1280px",
     },

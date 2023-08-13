@@ -528,9 +528,9 @@ video {
   width: 100%;
 }
 
-@media (min-width: 400px){
+@media (min-width: 350px){
   .container{
-    max-width: 400px;
+    max-width: 350px;
   }
 }
 
@@ -829,7 +829,7 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-@media (min-width: 400px){
+@media (min-width: 350px){
   .sp\:my-8{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -863,6 +863,11 @@ video {
   .sp\:text-xs{
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .sp\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

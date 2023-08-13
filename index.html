@@ -16,7 +16,7 @@
   <!-- タイトル表示 -->
   <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between pc:my-5 tb:my-6 sp:my-8 py-1 pc:px-20 tb:px-1">
     <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-16 scale-x-[-1]" alt="ハイビスカス">
-    <h1 class="pc:text-5xl tb:text-4xl sp:text-3xl tracking-widest font-google font-bold">チップ計算します</h1>
+    <h1 class="pc:text-5xl tb:text-4xl sp:text-2xl tracking-widest font-bold">チップ計算します</h1>
     <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-16" alt="ハイビスカス">
   </div>
 
@@ -231,7 +231,7 @@
   // inputのチェック処理 要検討！！！！！
   const check = (subtotal, selectedPercentage) => {
     if ((isNaN(subtotal) || subtotal === 0) && (isNaN(selectedPercentage) || selectedPercentage === 0)) {
-      attention.textContent = 'subtotalを入力してください。チップ率を選択or入力してください。';
+      attention.innerHTML = 'subtotalを入力してください。<br>チップ率を選択or入力してください。';
     } else if (isNaN(subtotal)) {
       attention.textContent = 'subtotalを入力してください。';
     } else if (isNaN(selectedPercentage) || selectedPercentage === 0) {
