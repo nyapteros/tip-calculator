@@ -7,12 +7,12 @@
 @layer components {
   /* パーセンテージボタンのスタイル */
   .percentageButton {
-    @apply w-20 text-xl font-semibold py-2 px-3 mr-3 tracking-wider border-none rounded-xl bg-gray-100;
+    @apply w-20 text-xl font-semibold py-2 px-3 mr-3 tracking-wider border-2 border-none rounded-xl bg-blue-200 hover:bg-blue-400 hover:text-white;
   }
   
   /* 選択されているパーセンテージボタンのスタイル */
   .select {
-    @apply bg-indigo-700 text-white border-2 border-black;
+    @apply bg-blue-600 text-white border-none hover:bg-blue-600;
   }
 
   /* inputタグのスタイル */
@@ -22,7 +22,7 @@
 
   /* リセットボタンと計算ボタンの共通スタイル */
   .custom-button {
-    @apply text-xl w-32 font-semibold tracking-wider p-2 border-none rounded-xl shadow-md shadow-gray-400;
+    @apply text-xl w-32 font-semibold tracking-wider p-2 border-none rounded-xl shadow-md shadow-gray-400 active:translate-x-1 active:translate-y-1 active:shadow-none;
   }
 
   /* 切り替え用のタグのスタイル */

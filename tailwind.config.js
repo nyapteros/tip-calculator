@@ -12,6 +12,9 @@ module.exports = {
         'bgBlue': "url('../images/bg-blue.png')",
         'wave': "url('../images/bg-wave.png')",
       },
+      border: {
+        '3': '3px',
+      },
       fontFamily: {
         google: ['Zen Maru Gothic', 'sans-serif'],
       },

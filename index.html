@@ -8,20 +8,22 @@
     <title>チップ計算します</title>
     <link rel="stylesheet" href="dist/output.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 </head>
 
-<body class="h-screen flex justify-center font-google">
+<body class="h-screen flex justify-center font-google bg-wave">
 
 <section class="container flex flex-col items-center">
   <!-- タイトル表示 -->
-  <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between pc:my-5 tb:my-6 sp:my-8 py-1 pc:px-20 tb:px-1">
-    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-16 scale-x-[-1]" alt="ハイビスカス">
+  <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between pc:my-4 tb:my-6 sp:my-8 py-1 pc:px-20 tb:px-1">
+    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14 scale-x-[-1]" alt="ハイビスカス">
     <h1 class="pc:text-5xl tb:text-4xl sp:text-2xl tracking-widest font-bold">チップ計算します</h1>
-    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-16" alt="ハイビスカス">
+    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14" alt="ハイビスカス">
   </div>
 
   <!-- 計算部分 -->
-  <div class="w-4/5 sp:w-11/12 pc:mb-5 tb:mb-8 sp:mb-10 py-4">
+  <div class="w-4/5 sp:w-full pc:mb-5 tb:mb-8 sp:mb-10 py-4">
     <!-- subtotal入力 -->
     <div class="flex justify-center items-center mb-3">
       <label for="subtotal" class="text-2xl font-bold tracking-wider mr-8 ">subtotal</label>
@@ -31,7 +33,7 @@
 
     <!-- パーセンテージ選択ボタン -->
     <div class="flex justify-center items-center">
-      <button class="percentageButton" type="button" onclick="selectPercentage(15, event)">15%</button>
+      <button class="percentageButton " type="button" onclick="selectPercentage(15, event)">15%</button>
       <button class="percentageButton" type="button" onclick="selectPercentage(18, event)">18%</button>
       <button class="percentageButton" type="button" onclick="selectPercentage(20, event)">20%</button>
       <!-- パーセンテージ手入力欄 -->
@@ -39,17 +41,17 @@
     </div>
     <!-- パーセンテージ選択ボタン　終わり -->
 
-    <p id="attention" class="text-center text-red-500 text-sm sp:text-xs my-4">&nbsp;</p>
+    <p id="attention" class="h-8 text-center text-red-500 text-sm sp:text-xs my-4">&nbsp;</p>
 
     <div class="flex justify-center items-center">
-      <button id="reset" class="custom-button bg-pink-200 mr-8" type="button" onclick="reset()">リセット</button>
-      <button id="calc" class="custom-button bg-green-200" type="button" onclick="calc()">計 算</button>
+      <button id="reset" class="custom-button bg-pink-200 hover:bg-pink-300 mr-8" type="button" onclick="reset()">リセット</button>
+      <button id="calc" class="custom-button bg-green-200 hover:bg-green-300" type="button" onclick="calc()">計 算</button>
     </div>
   </div>
   <!-- 計算部分　終わり -->
 
   <!-- 結果部分 -->
-  <div class="pc:w-1/4 tb:w-2/5 sp:w-3/4">
+  <div class="pc:w-1/4 tb:w-2/5 sp:w-5/6">
     <!-- 切り替え用のタブ -->
     <div class="flex">
       <div class="tab bg-purple-100 cursor-pointer" onclick="showTable('tightTable')">こまかく計算</div>
