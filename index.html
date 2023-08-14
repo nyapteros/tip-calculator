@@ -12,11 +12,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 </head>
 
-<body class="h-screen flex flex-col items-center font-google bg-wave relative">
+<body class="min-h-screen flex flex-col items-center font-google bg-wave">
 
 <section class="container flex flex-col items-center">
   <!-- タイトル表示 -->
-  <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between pc:my-4 tb:my-6 sp:my-8 py-1 pc:px-20 tb:px-1">
+  <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between my-6 pc:my-4 py-1 pc:px-20 tb:px-1">
     <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14 scale-x-[-1]" alt="ハイビスカス">
     <h1 class="pc:text-5xl tb:text-4xl sp:text-2xl tracking-widest font-bold">チップ計算します</h1>
     <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14" alt="ハイビスカス">
@@ -27,7 +27,7 @@
     <!-- subtotal入力 -->
     <div class="flex justify-center items-center mb-3">
       <label for="subtotal" class="text-2xl font-bold tracking-wider mr-8 ">subtotal</label>
-      <input id="subtotalInput" type="text" placeholder="0" class="input-space w-28" oninput="test()"><span class="font-semibold ml-1">㌦</span>
+      <input id="subtotalInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-28" oninput="test()"><span class="font-semibold ml-1">㌦</span>
     </div>
     <!-- subtotal入力　終わり -->
 
@@ -37,7 +37,7 @@
       <button class="percentageButton" type="button" onclick="selectPercentage(18, event)">18%</button>
       <button class="percentageButton" type="button" onclick="selectPercentage(20, event)">20%</button>
       <!-- パーセンテージ手入力欄 -->
-      <input id="customPercentageInput" type="text" placeholder="0" class="input-space w-20" oninput="percentageInput()"><span class="font-semibold ml-1">㌫</span>
+      <input id="customPercentageInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-20" oninput="percentageInput()"><span class="font-semibold ml-1">㌫</span>
     </div>
     <!-- パーセンテージ選択ボタン　終わり -->
 
@@ -107,7 +107,7 @@
   <!-- 結果部分終わり -->
 </section>
 
-<footer class="absolute bottom-3 text-sm">
+<footer class="text-sm mt-3">
   <p>&copy; 2023 hokulea-mochi</p>
 </footer>
 

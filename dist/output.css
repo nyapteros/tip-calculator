@@ -685,6 +685,10 @@ video {
   letter-spacing: 0.025em;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -727,6 +731,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-6{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .mb-3{
   margin-bottom: 0.75rem;
 }
@@ -745,6 +754,10 @@ video {
 
 .mb-4{
   margin-bottom: 1rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
 }
 
 .flex{
@@ -767,6 +780,10 @@ video {
   height: 100vh;
 }
 
+.min-h-screen{
+  min-height: 100vh;
+}
+
 .w-20{
   width: 5rem;
 }
@@ -781,6 +798,10 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.flex-grow{
+  flex-grow: 1;
 }
 
 .scale-x-\[-1\]{
