@@ -14,261 +14,247 @@
 
 <body class="min-h-screen flex flex-col items-center font-google bg-wave">
 
-<section class="container flex flex-col items-center">
-  <!-- タイトル表示 -->
-  <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between my-6 pc:my-4 py-1 pc:px-20 tb:px-1">
-    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14 scale-x-[-1]" alt="ハイビスカス">
-    <h1 class="pc:text-5xl tb:text-4xl sp:text-2xl tracking-widest font-bold">チップ計算します</h1>
-    <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14" alt="ハイビスカス">
-  </div>
-
-  <!-- 計算部分 -->
-  <div class="w-4/5 sp:w-full pc:mb-5 tb:mb-8 sp:mb-10 py-4">
-    <!-- subtotal入力 -->
-    <div class="flex justify-center items-center mb-3">
-      <label for="subtotal" class="text-2xl font-bold tracking-wider mr-8 ">subtotal</label>
-      <input id="subtotalInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-28" oninput="test()"><span class="font-semibold ml-1">㌦</span>
-    </div>
-    <!-- subtotal入力　終わり -->
-
-    <!-- パーセンテージ選択ボタン -->
-    <div class="flex justify-center items-center">
-      <button class="percentageButton " type="button" onclick="selectPercentage(15, event)">15%</button>
-      <button class="percentageButton" type="button" onclick="selectPercentage(18, event)">18%</button>
-      <button class="percentageButton" type="button" onclick="selectPercentage(20, event)">20%</button>
-      <!-- パーセンテージ手入力欄 -->
-      <input id="customPercentageInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-20" oninput="percentageInput()"><span class="font-semibold ml-1">㌫</span>
-    </div>
-    <!-- パーセンテージ選択ボタン　終わり -->
-
-    <p id="attention" class="h-8 text-center text-red-500 text-sm sp:text-xs my-4">&nbsp;</p>
-
-    <div class="flex justify-center items-center">
-      <button id="reset" class="custom-button bg-pink-200 hover:bg-pink-300 mr-8" type="button" onclick="reset()">リセット</button>
-      <button id="calc" class="custom-button bg-green-200 hover:bg-green-300" type="button" onclick="calc()">計 算</button>
-    </div>
-  </div>
-  <!-- 計算部分　終わり -->
-
-  <!-- 結果部分 -->
-  <div class="pc:w-1/4 tb:w-2/5 sp:w-5/6">
-    <!-- 切り替え用のタブ -->
-    <div class="flex">
-      <div class="tab bg-purple-100 cursor-pointer" onclick="showTable('tightTable')">こまかく計算</div>
-      <div class="tab bg-yellow-100 cursor-pointer" onclick="showTable('roundTable')">ざっくり計算</div>
+  <section class="container flex flex-col items-center">
+    <!-- タイトル表示 -->
+    <div class="pc:w-11/12 tb:w-11/12 sp:w-full flex items-center justify-between my-6 pc:my-4 py-1 pc:px-20 tb:px-1">
+      <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14 scale-x-[-1]" alt="ハイビスカス">
+      <h1 class="pc:text-5xl tb:text-4xl sp:text-2xl tracking-widest font-bold">チップ計算します</h1>
+      <img src="images/hibiscus2.png" class="pc:w-40 tb:w-32 sp:w-14" alt="ハイビスカス">
     </div>
 
-    <!-- こまかく計算 -->
-    <div class="relative">
-      <div id="tightTable" class="bg-purple-100 common-1">
-        <p class="comment">&nbsp;</p>
-        <!-- 結果表示のテーブル -->
-        <table class="mx-auto">
-          <tbody class="">
-            <tr class="custom-border">
-              <th class="common-2">subtotal</th>
-              <td class="tightspace common-3"></td>
-            </tr>
-            <tr class="custom-border">
-              <th class="common-2">tip</th>
-              <td class="tightspace common-3"></td>
-            </tr>
-            <tr class="custom-border">
-              <th class="common-2">total</th>
-              <td class="tightspace common-3"></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- 計算部分 -->
+    <div class="w-4/5 sp:w-full pc:mb-5 tb:mb-8 sp:mb-10 py-4">
+      <!-- subtotal入力 -->
+      <div class="flex justify-center items-center mb-3">
+        <label for="subtotal" class="text-2xl font-bold tracking-wider mr-8 ">subtotal</label>
+        <input id="subtotalInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-28"><span class="font-semibold ml-1">㌦</span>
       </div>
-    
-      <!-- ざっくり計算 -->
-      <div id="roundTable" class="bg-yellow-100 common-1 absolute top-0 left-0 w-full hidden">
-        <p class="comment">&nbsp;</p>
-        <!-- 結果表示のテーブル -->
-        <table class="mx-auto">
-          <tbody>
-            <tr class="custom-border">
-              <th class="common-2">subtotal</th>
-              <td class="roundspace common-3"></td>
-            </tr>
-            <tr class="custom-border">
-              <th class="common-2">tip</th>
-              <td class="roundspace common-3"></td>
-            </tr>
-            <tr class="custom-border">
-              <th class="common-2">total</th>
-              <td class="roundspace common-3"></td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- subtotal入力　終わり -->
+
+      <!-- パーセンテージ選択ボタン -->
+      <div class="flex justify-center items-center">
+        <button class="percentageButton " type="button" onclick="selectPercentage(15, event)">15%</button>
+        <button class="percentageButton" type="button" onclick="selectPercentage(18, event)">18%</button>
+        <button class="percentageButton" type="button" onclick="selectPercentage(20, event)">20%</button>
+        <!-- パーセンテージ手入力欄 -->
+        <input id="customPercentageInput" type="text" inputmode="numeric" placeholder="0" class="input-space w-20" oninput="percentageInput()"><span class="font-semibold ml-1">㌫</span>
+      </div>
+      <!-- パーセンテージ選択ボタン　終わり -->
+
+      <p id="attention" class="h-8 text-center text-red-500 text-sm sp:text-xs my-4">&nbsp;</p>
+
+      <div class="flex justify-center items-center">
+        <button id="reset" class="custom-button bg-pink-200 hover:bg-pink-300 mr-8" type="button" onclick="reset()">リセット</button>
+        <button id="calc" class="custom-button bg-green-200 hover:bg-green-300" type="button" onclick="calc()">計 算</button>
       </div>
     </div>
-  </div>
-  <!-- 結果部分終わり -->
-</section>
+    <!-- 計算部分　終わり -->
 
-<footer class="text-sm mt-3">
-  <p>&copy; 2023 hokulea-mochi</p>
-</footer>
+    <!-- 結果部分 -->
+    <div class="pc:w-1/4 tb:w-2/5 sp:w-5/6">
+      <!-- 切り替え用のタブ -->
+      <div class="flex">
+        <div class="tab bg-purple-100 cursor-pointer" onclick="showTable('tightTable')">こまかく計算</div>
+        <div class="tab bg-yellow-100 cursor-pointer" onclick="showTable('roundTable')">ざっくり計算</div>
+      </div>
 
-<script>
-  let selectedPercentage = 0;
-  const subtotalInput = document.getElementById('subtotalInput');
-  const buttons = document.querySelectorAll('.percentageButton');
-  const customPercentage = document.getElementById('customPercentageInput');
-  const tightspaces = document.querySelectorAll('.tightspace');
-  const roundspaces = document.querySelectorAll('.roundspace');
-  const attention = document.getElementById('attention');
-  const comments = document.querySelectorAll('.comment');
-  const tables = document.querySelectorAll('.common-1');
-  
-  // パーセンテージ選択（ボタンから選択されたとき）
-  const selectPercentage = (percentage, e) => {
-    selectedPercentage = parseFloat(percentage / 100);
+      <div class="relative">
+        <!-- こまかく計算 -->
+        <div id="tightTable" class="bg-purple-100 common-1">
+          <p class="comment">&nbsp;</p>
+          <!-- 結果表示のテーブル -->
+          <table class="mx-auto">
+            <tbody class="">
+              <tr class="custom-border">
+                <th class="common-2">subtotal</th>
+                <td class="tightspace common-3"></td>
+              </tr>
+              <tr class="custom-border">
+                <th class="common-2">tip</th>
+                <td class="tightspace common-3"></td>
+              </tr>
+              <tr class="custom-border">
+                <th class="common-2">total</th>
+                <td class="tightspace common-3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- こまかく計算 終わり -->
+      
+        <!-- ざっくり計算 -->
+        <div id="roundTable" class="bg-yellow-100 common-1 absolute top-0 left-0 w-full hidden">
+          <p class="comment">&nbsp;</p>
+          <!-- 結果表示のテーブル -->
+          <table class="mx-auto">
+            <tbody>
+              <tr class="custom-border">
+                <th class="common-2">subtotal</th>
+                <td class="roundspace common-3"></td>
+              </tr>
+              <tr class="custom-border">
+                <th class="common-2">tip</th>
+                <td class="roundspace common-3"></td>
+              </tr>
+              <tr class="custom-border">
+                <th class="common-2">total</th>
+                <td class="roundspace common-3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- ざっくり計算　終わり -->
+      </div>
+    </div>
+    <!-- 結果部分終わり -->
+  </section>
 
-    // 選択されているボタンに『select』クラスを付与
-    buttons.forEach(button => {
-      button.classList.remove('select');
-    });
-    e.target.classList.add('select');
+  <footer class="text-sm mt-3">
+    <p>&copy; 2023 hokulea-mochi</p>
+  </footer>
 
-    // 手入力欄を初期値に
-    customPercentage.value = '';
+  <script>
+    let selectedPercentage = 0;
+    const subtotalInput = document.getElementById('subtotalInput');
+    const buttons = document.querySelectorAll('.percentageButton');
+    const customPercentage = document.getElementById('customPercentageInput');
+    const tightspaces = document.querySelectorAll('.tightspace');
+    const roundspaces = document.querySelectorAll('.roundspace');
+    const attention = document.getElementById('attention');
+    const comments = document.querySelectorAll('.comment');
+    const tables = document.querySelectorAll('.common-1');
     
-    console.log(selectedPercentage); //@@@@@@@@@@@@@ あとで消す
-  }
+    // パーセンテージ選択（ボタンから選択されたとき）
+    const selectPercentage = (percentage, e) => {
+      selectedPercentage = parseFloat(percentage / 100);
 
-  // パーセンテージが手入力されたとき
-  const percentageInput = () => {
-    selectedPercentage = parseFloat(customPercentage.value / 100);
+      // 選択されているボタンに『select』クラスを付与
+      buttons.forEach(button => {
+        button.classList.remove('select');
+      });
+      e.target.classList.add('select');
 
-    // ボタンの選択状態を解除
-    buttons.forEach(button => {
-      button.classList.remove('select');
-    });
-
-    console.log(selectedPercentage); //@@@@@@@@@@@@@　あとで消す
-  }
-
-  // リセットボタンの処理
-  const reset = () => {
-    // subtotal欄を初期値にする
-    subtotalInput.value = '';
-    // selectedPercentageを初期値にする
-    selectedPercentage = 0;
-
-    // パーセンテージのボタンの選択状態を解除
-    buttons.forEach(button => {
-      button.classList.remove('select');
-    });
-    
-    // 手入力欄を初期値にする
-    customPercentage.value = '';
-
-    // attentionを初期値の空白にする
-    attention.innerHTML = '&nbsp;';
-    // commentsを初期値の空白にする
-    comments.forEach(comment => {
-      comment.innerHTML = '&nbsp;';
-    });
-
-    // 結果表示部分を空にする
-    tightspaces.forEach(tight => {
-      tight.textContent = '';
-    });
-    roundspaces.forEach(round => {
-      round.textContent = '';
-    });
-  }
-  
-  // 計算ボタンの処理
-  const calc = () => {
-    const subtotal = parseFloat(subtotalInput.value);
-
-    const tip = subtotal * selectedPercentage;
-    const total = tip + subtotal;
-
-    console.log(`チップ：${tip.toLocaleString('en-US')}`); //@@@@@@@@@@あとで消す
-    console.log(`トータル：${total.toLocaleString('en-US')}`); //@@@@@@@@@@あとで消す
-
-    const result = check(subtotal, selectedPercentage);
-
-    if (result === 'ok') {
-      show(subtotal, tip, total);
+      // 手入力欄を初期値に
+      customPercentage.value = '';
     }
-  }
 
-  // 結果部分に表示する処理
-  const show = (subtotal, tip, total) => {
-    const values = [subtotal, tip, total];
-    
-    // こまかく計算用
-    // 繰り返し処理その1
-    tightspaces.forEach((tight, index) => {
-      tight.textContent = `$${values[index].toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      })}`;
-    });
-    // 繰り返し処理その2
-    /* for (let i = 0; i < tightspaces.length; i++) {
-      tightspaces[i].textContent = values[i].toFixed(2);
-    } */
+    // パーセンテージが手入力されたとき
+    const percentageInput = () => {
+      selectedPercentage = parseFloat(customPercentage.value / 100);
 
-    // ざっくり計算用
-    // 繰り返し処理その1
-    roundspaces.forEach((round, index) => {
-      round.textContent = `$${values[index].toLocaleString('en-US', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      })}`;
-    });
-  
-    // 繰り返し処理その2
-    /* for (let i = 0; i < roundspaces.length; i++) {
-      roundspaces[i].textContent = values[i].toFixed(0);
-    } */
+      // ボタンの選択状態を解除
+      buttons.forEach(button => {
+        button.classList.remove('select');
+      });
+    }
 
-    comments.forEach(comment => {
-      comment.textContent = `${(selectedPercentage * 100)}㌫で計算しました。`;
-    });
-  }
+    // リセットボタンの処理
+    const reset = () => {
+      // subtotal欄を初期値にする
+      subtotalInput.value = '';
+      // selectedPercentageを初期値にする
+      selectedPercentage = 0;
 
-  // inputのチェック処理 要検討！！！！！
-  const check = (subtotal, selectedPercentage) => {
-    if ((isNaN(subtotal) || subtotal === 0) && (isNaN(selectedPercentage) || selectedPercentage === 0)) {
-      attention.innerHTML = 'subtotalを入力してください。<br>チップ率を選択or入力してください。';
-    } else if (isNaN(subtotal)) {
-      attention.textContent = 'subtotalを入力してください。';
-    } else if (isNaN(selectedPercentage) || selectedPercentage === 0) {
-      attention.textContent = 'チップ率を選択or入力してください。';
-    } else {
+      // パーセンテージのボタンの選択状態を解除
+      buttons.forEach(button => {
+        button.classList.remove('select');
+      });
+      
+      // 手入力欄を初期値にする
+      customPercentage.value = '';
+
+      // attentionを初期値の空白にする
       attention.innerHTML = '&nbsp;';
-      return 'ok';
+      // commentsを初期値の空白にする
+      comments.forEach(comment => {
+        comment.innerHTML = '&nbsp;';
+      });
+
+      // 結果表示部分を空にする
+      tightspaces.forEach(tight => {
+        tight.textContent = '';
+      });
+      roundspaces.forEach(round => {
+        round.textContent = '';
+      });
     }
-  }
+    
+    // 計算ボタンの処理
+    const calc = () => {
+      const subtotal = parseFloat(subtotalInput.value);
 
-  // 結果表示欄のタブ切り替え処理
-  const showTable = tableId => {
-    tables.forEach(table => {
-      if (table.id === tableId) {
-        table.classList.remove('hidden');
-      } else {
-        table.classList.add('hidden');
+      const tip = subtotal * selectedPercentage;
+      const total = tip + subtotal;
+
+      const result = check(subtotal, selectedPercentage);
+
+      if (result === 'ok') {
+        show(subtotal, tip, total);
       }
-    });
-    console.log(tableId);
-  }
+    }
 
+    // 結果部分に表示する処理
+    const show = (subtotal, tip, total) => {
+      const values = [subtotal, tip, total];
+      
+      // こまかく計算用
+      // 繰り返し処理その1
+      tightspaces.forEach((tight, index) => {
+        tight.textContent = `$${values[index].toLocaleString('en-US', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
+      });
+      // 繰り返し処理その2
+      /* for (let i = 0; i < tightspaces.length; i++) {
+        tightspaces[i].textContent = values[i].toFixed(2);
+      } */
 
-  const test = () => {
-    const subtotal = subtotalInput.value;
-    const abc = parseFloat(subtotal);
-    console.log(abc);
-  }
-  
+      // ざっくり計算用
+      // 繰り返し処理その1
+      roundspaces.forEach((round, index) => {
+        round.textContent = `$${values[index].toLocaleString('en-US', {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        })}`;
+      });
+      // 繰り返し処理その2
+      /* for (let i = 0; i < roundspaces.length; i++) {
+        roundspaces[i].textContent = values[i].toFixed(0);
+      } */
 
-</script>
+      comments.forEach(comment => {
+        comment.textContent = `${(selectedPercentage * 100)}㌫で計算しました。`;
+      });
+    }
+
+    // inputのチェック処理 要検討！！！！！
+    const check = (subtotal, selectedPercentage) => {
+      if ((isNaN(subtotal) || subtotal === 0) && (isNaN(selectedPercentage) || selectedPercentage === 0)) {
+        attention.innerHTML = 'subtotalを入力してください。<br>チップ率を選択or入力してください。';
+      } else if (isNaN(subtotal)) {
+        attention.textContent = 'subtotalを入力してください。';
+      } else if (isNaN(selectedPercentage) || selectedPercentage === 0) {
+        attention.textContent = 'チップ率を選択or入力してください。';
+      } else {
+        attention.innerHTML = '&nbsp;';
+        return 'ok';
+      }
+    }
+
+    // 結果表示欄のタブ切り替え処理
+    const showTable = tableId => {
+      tables.forEach(table => {
+        if (table.id === tableId) {
+          table.classList.remove('hidden');
+        } else {
+          table.classList.add('hidden');
+        }
+      });
+      console.log(tableId);
+    }
+
+  </script>
 
 </body>
 
